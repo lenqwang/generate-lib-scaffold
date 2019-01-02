@@ -1,0 +1,7 @@
+build/*.js
+dist/*.js
+output/*.js
+temp/*.js
+examples/*.js
+rollup.config.*.js
+wehdsdkvdemo
