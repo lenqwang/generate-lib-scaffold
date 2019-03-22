@@ -1,7 +1,7 @@
 import filesize from 'rollup-plugin-filesize'
 import uglify from 'rollup-plugin-uglify'
 import { minify } from 'uglify-es'
-import copy from 'rollup-plugin-copy'
+// import copy from 'rollup-plugin-copy'
 import config from './config'
 import baseConfig from './rollup.config.base'
 
@@ -55,9 +55,9 @@ export default [
         minify
       ),
       filesize(),
-      copy({
-        'dist': 'wehdsdkvdemo/lib'
-      })
+      // copy({
+      //   'dist': 'wehdsdkvdemo/lib'
+      // })
     ]
   }
 ]

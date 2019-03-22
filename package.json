@@ -27,7 +27,6 @@
     ]
   },
   "files": [
-    "src",
     "dist/*.js"
   ],
   "dependencies": {

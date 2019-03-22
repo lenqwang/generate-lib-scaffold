@@ -25,7 +25,7 @@ export default {
     ...baseConfig.plugins,
     serve({
       port,
-      contentBase: ['']
+      contentBase: [startPage]
     })
   ]
 }

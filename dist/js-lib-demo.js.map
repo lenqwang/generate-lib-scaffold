@@ -1,1 +1,0 @@
-{"version":3,"file":"js-lib-demo.js","sources":["../src/demo.js","../src/index.js"],"sourcesContent":["export const name = 'jake'\n","import { name } from './demo'\n\nconsole.log(`Hello ${name}!`)\n"],"names":["name","console","log"],"mappings":";;;;;;AAAO,IAAMA,OAAO,MAAb;;ACEPC,QAAQC,GAAR,YAAqBF,IAArB;;;;"}
