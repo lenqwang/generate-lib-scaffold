@@ -1,6 +1,6 @@
 {
   "name": "js-lib-demo",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "dist/js-lib-demo.cjs.js",
   "module": "dist/js-lib-demo.esm.js",
   "unpkg": "dist/js-lib-demo.min.js",
