@@ -1,5 +1,12 @@
 module.exports = {
-  extends: ['airbnb-base', 'prettier'],
+  extends: [
+    // for js stardand
+    // 'airbnb-base',
+    // 'prettier',
+
+    // for react
+    'eslint-config-developit'
+  ],
   env: {
     browser: true,
     node: true,
@@ -19,6 +26,13 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'import/prefer-default-export': 'off',
     'max-len': 'off',
-    'no-underscore-dangle': 'off'
+    'no-underscore-dangle': 'off',
+    'comma-style': 'off',
+    'semi': 'off',
+    'react/jsx-curly-spacing': 'off',
+    'react/jsx-no-bind': 'off',
+    'react/sort-comp': 'off',
+    'no-alert': 'off',
+    'indent': ['error', 'tab']
   }
 };
