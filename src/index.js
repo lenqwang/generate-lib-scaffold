@@ -1,38 +1,27 @@
-import { h, render, Component } from 'preact';
+import { h, render } from 'preact';
+import Clock from './clock';
 
-class Clock extends Component {
-	constructor() {
-		super();
-
-		this.state = {
-			time: Date.now()
-		};
+export default class Library {
+	constructor(el, options) {
+		this.el = typeof el === 'string' ? document.querySelector(el) : el;
+		this.options = options;
+		this.renderedDom = null;
+		this.render(options);
 	}
 
-	handleClick(time) {
-		alert(time);
+	render(options) {
+		this.destroy();
+		this.renderedDom = render(<Clock {...options} />, this.el);
 	}
 
-	componentDidMount() {
-		this.timer = setInterval(() => {
-			this.setState({
-				time: Date.now()
-			});
-		}, 1e3);
+	setOptions(options) {
+		this.render(options);
 	}
 
-	componentWillUnmount() {
-		if (this.timer) {
-			clearInterval(this.timer);
+	destroy() {
+		if (this.renderedDom) {
+			this.el.removeChild(this.renderedDom);
+			this.renderedDom = null;
 		}
 	}
-
-	render() {
-		let time = new Date().toLocaleTimeString();
-
-		return <span onClick={(e) => this.handleClick(time, e)}>{time}</span>;
-	}
 }
-
-// 将一个时钟渲染到 <body > 标签:
-render(<Clock />, document.body);

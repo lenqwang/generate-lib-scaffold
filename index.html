@@ -8,8 +8,20 @@
 </head>
 <body>
   <script src="dist/js-lib-demo.js"></script>
-  <script>
 
+  <button class="btn" type="button">销毁</button>
+  <script>
+    const com = new Com(document.body, {})
+    setTimeout(() => {
+      com.setOptions({
+        name: 'jake'
+      })
+    }, 3e3)
+
+    const $button = document.querySelector('.btn')
+    $button.addEventListener('click', () => {
+      com.destroy()
+    })
   </script>
 </body>
 </html>

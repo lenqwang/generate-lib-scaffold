@@ -33,6 +33,7 @@ module.exports = {
     'react/jsx-no-bind': 'off',
     'react/sort-comp': 'off',
     'no-alert': 'off',
-    'indent': ['error', 'tab']
+    'indent': ['error', 'tab'],
+    'no-console': 'off'
   }
 };
