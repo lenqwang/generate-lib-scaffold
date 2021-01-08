@@ -1,0 +1,73 @@
+{
+  "name": "generate-lib-scaffold",
+  "version": "0.1.0",
+  "description": "A Library for test rollup & typescript",
+  "main": "index.js",
+  "module": "lib/index.esm.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "author": "lenqwang",
+  "license": "MIT",
+  "sideEffects": "false",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "gulp build",
+    "test": "jest --coverage --verbose -u",
+    "api": "api-extractor run",
+    "changelog": "gulp changelog",
+    "cz": "npx git-cz",
+    "prepublishOnly": "yarn lint & yarn test & yarn changelog & yarn build"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged & jest -u"
+    }
+  },
+  "lint-staged": {
+    "*.{.ts,.js}": [
+      "eslint",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@microsoft/api-extractor": "^7.12.1",
+    "@types/fs-extra": "^9.0.6",
+    "@types/gulp": "^4.0.7",
+    "@types/jest": "^26.0.20",
+    "@types/mkdirp": "^1.0.1",
+    "@types/node": "^14.14.20",
+    "@typescript-eslint/eslint-plugin": "^4.12.0",
+    "@typescript-eslint/parser": "^4.12.0",
+    "chalk": "^4.1.0",
+    "conventional-changelog-cli": "^2.1.1",
+    "eslint": "^7.17.0",
+    "eslint-plugin-jest": "^24.1.3",
+    "fs-extra": "^9.0.1",
+    "gulp": "^4.0.2",
+    "husky": "^4.3.7",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
+    "mkdirp": "^1.0.4",
+    "rollup": "^2.36.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "terser": "^5.5.1",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
